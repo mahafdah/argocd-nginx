@@ -4,8 +4,10 @@ metadata:
   labels:
     app: nginx
   name: nginx
+  annotations:
+    avp.kubernetes.io/path: "test/data/test"
 spec:
-  replicas: 3
+  replicas: <url>
   selector:
     matchLabels:
       app: nginx
