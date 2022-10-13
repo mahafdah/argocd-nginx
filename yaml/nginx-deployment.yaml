@@ -5,7 +5,7 @@ metadata:
     app: nginx
   name: nginx
   annotations:
-    avp.kubernetes.io/path: "test/data/test"
+    avp.kubernetes.io/path: "test/to/test"
 spec:
   replicas: <url>
   selector:
