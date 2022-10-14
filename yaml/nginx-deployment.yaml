@@ -6,17 +6,12 @@ metadata:
   name: nginx
     
 spec:
-  replicas: <count>
+  replicas: 1
   selector:
     matchLabels:
       app: nginx
   template:
     metadata:
-      annotations:
-          # vault.hashicorp.com/agent-inject: 'true'
-          # vault.hashicorp.com/role: 'approle'
-          # vault.hashicorp.com/agent-inject-secret-database-config.txt: 'internal/data/database/config'
-          avp.kubernetes.io/path: "internal/data/database/config"
       creationTimestamp: null
       labels:
         app: nginx
