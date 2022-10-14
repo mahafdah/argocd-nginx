@@ -5,7 +5,9 @@ metadata:
     app: nginx
   name: nginx
   annotations:
-    avp.kubernetes.io/path: "test/data/test"
+    vault.hashicorp.com/role: 'internal-app'
+    vault.hashicorp.com/agent-inject-secret-database-config.txt: 'internal/data/database/config'
+    #avp.kubernetes.io/path: "internal/data/database/config"
 spec:
   replicas: <url>
   selector:
