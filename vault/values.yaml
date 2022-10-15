@@ -784,8 +784,8 @@ server:
 
         storage "raft" {
           path = "/vault/data"
-      
-      }
+        }
+        
         service_registration "kubernetes" {}
 
     # config is a raw string of default configuration when using a Stateful
