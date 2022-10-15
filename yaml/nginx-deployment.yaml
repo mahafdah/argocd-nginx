@@ -10,7 +10,7 @@ metadata:
   name: nginx
     
 spec:
-  replicas: {{.Data.data.replicaCount}}
+  replicas: <replicaCount>
   selector:
     matchLabels:
       app: nginx
