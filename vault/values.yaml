@@ -784,26 +784,7 @@ server:
 
         storage "raft" {
           path = "/vault/data"
-            retry_join {
-            leader-api-addr = "http://vault-0.vault-internal:8200"
-        }
-        retry_join {
-          leader-api-addr = "http://vault-1.vault-internal:8200"
-
-        }
-        retry_join {
-          leader-api-addr = "http://vault-2.vault-internal:8200"
-
-        }
-        
-        autopilot {
-          cleanup_dead_servers = "true"
-          last_contact_threshold = "200ms"
-          last_contact_failure_threshold = "10m"
-          max_trailing_logs = 25000
-          min_quorum = 3
-          server_stabilization_time = "10s"
-        }
+      
       }
         service_registration "kubernetes" {}
 
