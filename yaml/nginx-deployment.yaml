@@ -2,9 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    vault.hashicorp.com/agent-inject: "true"
-    vault.hashicorp.com/agent-inject-secret-database-config.txt: internal/data/database/config
-    vault.hashicorp.com/agent-inject-status: injected
+    vault.hashicorp.com/agent-inject: 'true'
+    vault.hashicorp.com/role: 'internal-app'
+    vault.hashicorp.com/agent-inject-secret-database-config.txt: 'internal/data/database/config'
   labels:
     app: nginx
   name: nginx
