@@ -40,7 +40,7 @@ global:
 injector:
   # True if you want to enable vault agent injection.
   # @default: global.enabled
-  enabled: "-"
+  enabled: true
 
   replicas: 1
 
@@ -761,9 +761,9 @@ server:
     raft:
 
       # Enables Raft integrated storage
-      enabled: false
+      enabled: true
       # Set the Node Raft ID to the name of the pod
-      setNodeId: false
+      setNodeId: true # mahafdah
 
       # Note: Configuration files are stored in ConfigMaps so sensitive data
       # such as passwords should be either mounted through extraSecretEnvironmentVars
@@ -784,8 +784,27 @@ server:
 
         storage "raft" {
           path = "/vault/data"
+            retry_join {
+            leader-api-addr = "http://vault-0.vault-internal:8200"
         }
+        retry_join {
+          leader-api-addr = "http://vault-1.vault-internal:8200"
 
+        }
+        retry_join {
+          leader-api-addr = "http://vault-2.vault-internal:8200"
+
+        }
+        
+        autopilot {
+          cleanup_dead_servers = "true"
+          last_contact_threshold = "200ms"
+          last_contact_failure_threshold = "10m"
+          max_trailing_logs = 25000
+          min_quorum = 3
+          server_stabilization_time = "10s"
+        }
+      }
         service_registration "kubernetes" {}
 
     # config is a raw string of default configuration when using a Stateful
@@ -806,7 +825,7 @@ server:
       }
       storage "consul" {
         path = "vault"
-        address = "consul-server:8500"
+        address = "HOST_IP:8500"
       }
 
       service_registration "kubernetes" {}
