@@ -18,7 +18,6 @@ spec:
       labels:
         app: nginx
     spec:
-      serviceAccountName: internal-app
       containers:
       - image: nginx
         imagePullPolicy: Always
