@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    avp.kubernetes.io/path: "testing/to/secret1"
+    avp.kubernetes.io/path: "tiqan/data/secret1"
   labels:
     app: nginx
   name: nginx
