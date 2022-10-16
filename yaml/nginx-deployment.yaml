@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    avp.kubernetes.io/path: "nginx/data/database/config"
+    avp.kubernetes.io/path: "testing/data/secret1"
   labels:
     app: nginx
   name: nginx
