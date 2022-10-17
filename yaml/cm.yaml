@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: nginx-cm
   namespace: nginx
-  annotations:
-    avp.kubernetes.io/path: "tiqan/data/secret1"
+  # annotations:
+  #   avp.kubernetes.io/path: "tiqan/data/secret1"
 data:
   name: <name>
