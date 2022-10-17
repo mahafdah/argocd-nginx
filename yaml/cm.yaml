@@ -6,4 +6,4 @@ metadata:
   annotations:
     avp.kubernetes.io/path: "tiqan/data/secret1"
 data:
-name: <name>
+  name: <name>
